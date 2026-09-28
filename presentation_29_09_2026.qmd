@@ -127,8 +127,9 @@ plot_seq(seq_p1_p2[1201:1223])
 We use both the disk phantom and the bSSFP sequence to simulate the acquisition of the data.
 
 For reconstruction:
+
 1. we use a GRAPPA reconstruction with a 3x4 kernel to get the two bSSP states
-2. we do both a complex summation and complex subtraction of the two states, we can obtain two complementary images.
+2. we do both a complex summation and complex subtraction of the two states, enabling us to obtain two complementary images,
 3. we perform a Sum of Squares (SoS) over the two complementary images to obtain a final image with reduced banding artifacts.
 
 ## Results
@@ -166,7 +167,11 @@ end
 
 ## Discussion
 - In general, the results are good, but the banding artifacts are not completely removed.
-- We can see that higher parameters (TR, FA, RF duration) generaly lead to better results.
+- We can see that higher TR and FA generaly lead to better results.
+- Regarding RF duration, a longer excitation allows for a better excitation profile, but is more sensitive to B0 inhomogeneities.
+- If the RF duration is too short, we will have two issues:
+    - The excitation profile will be poor.
+    - For a given FA, RF amplitude would need to be higher, leading to a higher SAR.
 - But we would want them to be as low as possible to reduce the acquisition time and SAR. Otherwise, this method would not be practical.
 - The phantom used for now is very simple; more complex anatomy would require more complex RF pulses and may not give good results (@wu_mitigating_2026).
 - Next steps: 
