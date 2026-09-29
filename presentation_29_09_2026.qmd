@@ -154,12 +154,21 @@ result_files = sort(
 
 for f in result_files
     name = basename(f)
+    src = joinpath("images", name)
     m = match(r"^result_TR([0-9]+)_FA([0-9]+)_RFdur([0-9]+)\.", name)
     if m === nothing
-        println("![]($(joinpath("images", name)))")
+        println("![]($src)")
     else
         tr, fa, rf = m.captures
-        println("![TR=$(tr) ms, FA=$(fa)°, RFdur=$(rf) ms]($(joinpath("images", name)))")
+        cap = "TR=$(tr) ms, FA=$(fa)°, RFdur=$(rf) ms:"
+        println("""
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption class="quarto-float-caption-top" style="margin-bottom:0.4rem">$(cap)</figcaption>
+<p><img src="$(src)" class="img-fluid figure-img" alt="$(cap)"></p>
+</figure>
+</div>
+""")
     end
     println()
 end
