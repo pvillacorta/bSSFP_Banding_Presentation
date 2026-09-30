@@ -60,13 +60,14 @@ The two states are initially mixed within the same image, but can be separated u
 
 By performing a Sum of Squares (SoS) over the obtained images, one can obtain a final image with reduced banding artifacts.
 
-## Single Tx channel approach: optimized 2D SSE RF pulses
+### Single Tx channel approach: optimized 2D SSE RF pulses
+Previous work from @Fareed2026_f538eb2a has shown that optimized RF pulses for selective excitation, magnetization preparation, and saturation of a specific region of interest (ROI) can be designed with a single Tx channel, and with very short computation times.
 
 ![A spiral gradient steers which location is in resonance while a jinc‑shaped RF pulse tips spins at those locations, producing a narrow cylindrical region of excited signal, by @castillo-passi_i_2025.](images/rf_2dexcitation.gif)
 
 By using this approach, we can not only define the magnitude (module) of the magnetization produced by the RF pulse over a ROI, but also its phase. This would allow us to mimic the effect of the pTx pulses used in @wu_mitigating_2026, but using a single Tx channel.
 
-**The main drawback would be the need for longer RF pulses.**
+**The main drawback would be the need for longer RF pulses compared to the pTx case.**
 
 ## Methods
 
