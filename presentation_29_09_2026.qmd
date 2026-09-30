@@ -184,9 +184,12 @@ end
 - But we would want them to be as low as possible to reduce the acquisition time and SAR. Otherwise, this method would not be practical.
 - The phantom used for now is very simple; more complex anatomy would require more complex RF pulses and may not give good results (@wu_mitigating_2026).
 - Next steps: 
+    - Optimize the RF pulses for a specific flip angle instead of optimizing for 1° and then scaling to the desired FA (this last approach is what @wu_mitigating_2026 does, but it may not be optimal).
+    - Optimize both RF pulses at the same time instead of optimizing them separately. This would allow for a more accurate phase difference between the two pulses, while being able to relax the common mode phase constraint.
+    - Once obtained the optimized RF pulses, test them with another phantom with spins outside the ROI.
     - Explore other transmit k-space trajectories, optimized for the specific ROI and anatomy. See @geldschlager_otup_2022 for an example of this approach.
     - Explore other reconstruction/image combination techniques.
-- The final goal would be to reduce banding artifacts in more complex anatomies, with motion, such as in the heart. The dynamic phantoms of KomaMRI could be used for this purpose.
+- The final goal would be to reduce banding artifacts in more complex anatomies, with motion, such as in the heart. The dynamic phantoms of KomaMRI (@villacortaaylagas_versatile_2026) could be used for this purpose.
 
 ## References
 
