@@ -1,6 +1,6 @@
 ---
 title: "Banding artifact reduction in bSSFP with 2D spatially selective excitation (2D SSE)"
-date: "9/25/2026"
+date: "9/29/2026"
 bibliography: bibliography.bib
 format:
   html:
